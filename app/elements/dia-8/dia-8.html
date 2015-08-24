@@ -15,21 +15,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: block;
     }
+    .content {
+      @apply(--layout-vertical);
+      background-color: #0ea788;
+    }
+
+    video {
+      height: 100%;
+    }
   </style>
   <template>
-    <div>Hello from <span>{{foo}}</span></div>
+    <paper-toolbar>
+      <p class="title">Utilisation par un étudiant</p>
+    </paper-toolbar>
+    <div class="content">
+      <video src="/videos/etudiant02.mp4" id="video"></video>
+    </div>
   </template>
   <script>
   (function() {
     Polymer({
       is: 'dia-8',
 
-      properties: {
-        foo: {
-          type: String,
-          value: 'bar',
-          notify: true
-        }
+      activateDia: function ( ) {
+        var that = this;
+        setTimeout(function () {
+          that.$.video.currentTime = 0;
+          that.$.video.play();
+        }, 500);
+      },
+
+      desactivateDia: function ( ) {
+        var that = this;
+        setTimeout(function () {
+          that.$.video.pause();
+          that.$.video.currentTime = 0;
+        }, 500);
+      },
+
+      ready: function () {
+        var that = this;
+
+        this.$.video.onended = function () {
+          that.fire('next-dia');
+        };
+
+        app.setLogoHeight(this.querySelector('.content'), .95);
+
+        window.addEventListener('resize', function() {
+          app.setLogoHeight(that.querySelector('.content'), .95);
+        });
       }
     });
   })();

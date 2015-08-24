@@ -61,25 +61,166 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <neon-animated-pages id="pages" class="flex" selected="[[selected]]" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
       <neon-animatable
         data-entry="fade-in-animation"
-        on-track="changePage"><dia-1 class="content"></dia-1></neon-animatable>
+        on-track="changePage">
+        <dia-1 class="content"></dia-1>
+      </neon-animatable>
       <neon-animatable
         data-entry="fade-in-animation"
-        on-track="changePage"><dia-2 class="content" foo="2"></dia-2></neon-animatable>
+        on-track="changePage">
+        <dia-2 class="content"></dia-2>
+      </neon-animatable>
       <neon-animatable
         data-entry="scale-up-animation"
-        on-track="changePage"><dia-3 class="content" foo="3"></dia-3></neon-animatable>
+        on-track="changePage">
+        <dia-3 class="content"></dia-3>
+      </neon-animatable>
       <neon-animatable
         data-entry="slide-from-right-animation"
-        on-track="changePage"><dia-4 class="content" foo="4"></dia-4></neon-animatable>
+        on-track="changePage">
+        <dia-4 class="content"></dia-4>
+      </neon-animatable>
       <neon-animatable
-        data-exit="slide-left-animation"
-        on-track="changePage"><dia-5 class="content" foo="5"></dia-5></neon-animatable>
-      <neon-animatable on-track="changePage"><dia-6 class="content" foo="6"></dia-6></neon-animatable>
-      <neon-animatable on-track="changePage"><dia-7 class="content" foo="7"></dia-7></neon-animatable>
-      <neon-animatable on-track="changePage"><dia-8 class="content" foo="8"></dia-8></neon-animatable>
-      <neon-animatable on-track="changePage"><dia-9 class="content" foo="9"></dia-9></neon-animatable>
-      <neon-animatable on-track="changePage"><dia-10 class="content" foo="10"></dia-10></neon-animatable>
+        data-entry="slide-down-animation"
+        on-track="changePage">
+        <dia-5 class="content"></dia-5>
+      </neon-animatable>
+
+      <!-- Utilisation étudiant -->
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content" no-title>
+          <span class="message">Utilisation par un étudiant</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/etudiant01.mp4">
+          <span class="title">Utilisation par un étudiant</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un étudiant</span>
+          <span class="message"><span class="paper-font-display4">1</span><hr>Ajout de dossier par<br>drag'n drop</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/etudiant02.mp4">
+          <span class="title">Utilisation par un étudiant</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un étudiant</span>
+          <span class="message"><span class="paper-font-display4">2</span><hr>Configuration des analyses</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/etudiant03.mp4">
+          <span class="title">Utilisation par un étudiant</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="slide-down-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un étudiant</span>
+          <span class="message"><span class="paper-font-display4">3</span><hr>Lecture des résultats</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <!-- Utilisation professeur -->
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content" no-title>
+          <span class="message">Utilisation par un professeur</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/prof01.mp4">
+          <span class="title">Utilisation par un professeur</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un professeur</span>
+          <span class="message"><span class="paper-font-display4">1</span><hr>Analyse par dossier</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/prof02.mp4">
+          <span class="title">Utilisation par un professeur</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un professeur</span>
+          <span class="message"><span class="paper-font-display4">2</span><hr>Lecture rapide des résultats synthétisés</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        data-exit="fade-out-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/prof03.mp4">
+          <span class="title">Utilisation par un professeur</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un professeur</span>
+          <span class="message"><span class="paper-font-display4">3</span><hr>Rapport détaillé et visuel</span>
+        </dia-text-center>
+      </neon-animatable>
+
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-video class="content" on-next-dia="onNextClick" path="/videos/prof04.mp4">
+          <span class="title">Utilisation par un professeur</span>
+        </dia-video>
+      </neon-animatable>
+      <neon-animatable
+        data-entry="fade-in-animation"
+        on-track="changePage">
+        <dia-text-center class="content">
+          <span class="title">Utilisation par un professeur</span>
+          <span class="message"><span class="paper-font-display4">4</span><hr>Meilleure productivité</span>
+        </dia-text-center>
+      </neon-animatable>
+
     </neon-animated-pages>
+
+
     <paper-toast id="caching-complete"
                  duration="6000"
                  text="Mise en cache complète, vous pouvez maintenant regarder cette présentation hors ligne.">

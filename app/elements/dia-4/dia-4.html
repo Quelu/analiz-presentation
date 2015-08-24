@@ -18,6 +18,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     p {
       white-space: normal;
+      margin-bottom: 0;
+    }
+    iron-image {
+      height: 200px;
+      width: 100%;
     }
 
     paper-material {
@@ -38,6 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
   <template>
     <paper-material elevation="5">
+      <iron-image src="/images/logo.svg" preload sizing="contain"></iron-image>
       <p class="paper-font-display3"><span>Plusieurs</span> analyses</p>
       <p class="paper-font-display3"><span>Une</span> interface</p>
     </paper-material>

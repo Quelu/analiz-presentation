@@ -15,21 +15,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: block;
     }
+
+    .content {
+      @apply(--layout-vertical);
+      @apply(--layout-center-center);
+      @apply(--paper-font-display4);
+      background-color: #0ea788;
+      color: white;
+      text-align: center;
+    }
+    .content p {
+      white-space: normal;
+      margin: 0;
+    }
   </style>
   <template>
-    <div>Hello from <span>{{foo}}</span></div>
+    <paper-toolbar>
+      <p class="title">Utilisation par un étudiant</p>
+    </paper-toolbar>
+    <div class="content">
+      <p>Configuration des analyses</p>
+    </div>
+  </template>
   </template>
   <script>
   (function() {
     Polymer({
       is: 'dia-9',
 
-      properties: {
-        foo: {
-          type: String,
-          value: 'bar',
-          notify: true
-        }
+      ready: function () {
+        var that = this;
+
+        app.setLogoHeight(this.querySelector('.content'), .95);
+
+        window.addEventListener('resize', function() {
+          app.setLogoHeight(that.querySelector('.content'), .95);
+        });
       }
     });
   })();

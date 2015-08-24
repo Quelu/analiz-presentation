@@ -33,14 +33,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.selected = ( window.history.state ) ? window.history.state : 0;
 
-  app._onPrevClick = function() {
+  app.onPrevClick = function() {
     this.entryAnimation = '';
     this.exitAnimation = 'slide-right-animation';
     this.selected = this.selected === 0 ? app.maxDia : (this.selected - 1);
     window.history.replaceState( this.selected, '', '#' + this.selected );
   };
 
-  app._onNextClick = function() {
+  app.onNextClick = function() {
     var current = app.$.pages.selectedItem;
 
     console.dir(current);
@@ -65,9 +65,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.changePage = function ( e ) {
     if ( e.detail.state === 'end' ) {
       if ( e.detail.dx < 0 ) {
-        app._onNextClick();
+        app.onNextClick();
       } else {
-        app._onPrevClick();
+        app.onPrevClick();
       }
     }
   };
@@ -75,18 +75,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   document.addEventListener('keydown', function( e ) {
     switch ( e.keyCode ) {
       case 37:
-        app._onPrevClick();
+        app.onPrevClick();
         break;
       case 32:
       case 39:
-        app._onNextClick();
+        app.onNextClick();
         break;
       default:
     }
   });
 
   document.addEventListener('click', function() {
-    app._onNextClick();
+    app.onNextClick();
   });
 
   app.setLogoHeight = function ( el, coef ) {

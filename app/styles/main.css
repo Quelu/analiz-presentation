@@ -45,3 +45,7 @@ paper-toolbar {
   bottom: 20px;
   left: 20px;
 }
+
+.bold {
+  font-weight: 500
+}

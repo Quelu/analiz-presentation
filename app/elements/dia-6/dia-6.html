@@ -15,13 +15,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host {
       display: block;
     }
+
     .content {
       @apply(--layout-vertical);
-      background-color: var(--paper-teal-500);
+      @apply(--layout-center-center);
+      @apply(--paper-font-display4);
+      background-color: #0ea788;
+      color: white;
+      text-align: center;
     }
-
-    video {
-      height: 100%;
+    .content p {
+      white-space: normal;
+      margin: 0;
     }
   </style>
   <template>
@@ -29,26 +34,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p class="title">Utilisation par un étudiant</p>
     </paper-toolbar>
     <div class="content">
-      <video src="/images/video.ogv" id="video"></video>
+      <p>Ajout de dossiers par drag'n drop</p>
     </div>
   </template>
   <script>
   (function() {
     Polymer({
       is: 'dia-6',
-
-      activateDia: function ( ) {
-        this.$.video.currentTime = 0;
-        this.$.video.play();
-      },
-
-      desactivateDia: function ( ) {
-        var that = this;
-        setTimeout(function () {
-          that.$.video.pause();
-          that.$.video.currentTime = 0;
-        }, 500);
-      },
 
       ready: function () {
         var that = this;
