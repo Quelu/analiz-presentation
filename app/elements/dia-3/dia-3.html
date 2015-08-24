@@ -55,14 +55,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ready: function () {
         var that = this;
 
-        app.setLogoHeight(this.querySelector('.w3c'), .5);
-        app.setLogoHeight(this.querySelector('.jshint'), .5);
-        app.setLogoHeight(this.querySelector('.cssstat'), .5);
+        app.setLogoHeight(this.querySelector('.w3c'), 0.5);
+        app.setLogoHeight(this.querySelector('.jshint'), 0.5);
+        app.setLogoHeight(this.querySelector('.cssstat'), 0.5);
 
         window.addEventListener('resize', function() {
-          app.setLogoHeight(that.querySelector('.w3c'), .5);
-          app.setLogoHeight(that.querySelector('.jshint'), .5);
-          app.setLogoHeight(that.querySelector('.cssstat'), .5);
+          app.setLogoHeight(that.querySelector('.w3c'), 0.5);
+          app.setLogoHeight(that.querySelector('.jshint'), 0.5);
+          app.setLogoHeight(that.querySelector('.cssstat'), 0.5);
         });
       }
     });
