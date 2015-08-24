@@ -31,6 +31,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // imports are loaded and elements have been registered
   });
 
+
+  app.setFullscreen = function () {
+    screenfull.toggle();
+  };
+
   app.selected = ( window.history.state ) ? window.history.state : 0;
 
   app.onPrevClick = function() {
@@ -42,8 +47,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.onNextClick = function() {
     var current = app.$.pages.selectedItem;
-
-    console.dir(current);
 
     current.dataset.entry = ( current.dataset.entry ) ? current.dataset.entry : 'slide-from-right-animation';
     current.dataset.exit = ( current.dataset.exit ) ? current.dataset.exit : '';
@@ -83,10 +86,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         break;
       default:
     }
-  });
-
-  document.addEventListener('click', function() {
-    app.onNextClick();
   });
 
   app.setLogoHeight = function ( el, coef ) {

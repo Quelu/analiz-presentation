@@ -23,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     paper-fab {
       position: absolute;
       right: 40px;
-      bottom: -26px;
+      top: 100px;
     }
 
     paper-toolbar {
@@ -43,8 +43,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-toolbar class="medium-tall">
       <div class="bottom title">
         <iron-icon icon="social:person"></iron-icon> Luc Matagne
-        <paper-fab icon=""></paper-fab>
       </div>
+      <paper-fab icon="fullscreen" on-click="_setFullscreen"></paper-fab>
     </paper-toolbar>
     <div class="content">
       <h1 class="paper-font-display4">Analiz</h1>
@@ -65,6 +65,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         window.addEventListener('resize', function() {
           app.setLogoHeight(that.querySelector('iron-image'));
         });
+      },
+
+      _setFullscreen: function () {
+        app.setFullscreen();
       }
     });
   })();
