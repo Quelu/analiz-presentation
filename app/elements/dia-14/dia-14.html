@@ -1,0 +1,121 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="dia-14">
+  <style>
+    :host {
+      display: block;
+    }
+
+    .content {
+      @apply(--layout-vertical);
+      padding: 30px 10%;
+    }
+    p {
+      @apply(--paper-font-display1);
+    }
+    .columns {
+      @apply(--layout-horizontal);
+    }
+    .column {
+      padding: 2em;
+      margin: 5% 2.5%;
+      width: 100%;
+      color: white;
+    }
+
+    .column:nth-child(1) {
+      background-color: var(--paper-cyan-500)
+    }
+
+    .column:nth-child(2) {
+      background-color: var(--paper-light-green-500)
+    }
+
+    .column h2 {
+      text-align: center;
+      @apply(--paper-font-display1);
+      padding-bottom: .5em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid white;
+    }
+
+    ul {
+      margin: 20px 0
+    }
+
+    ul li {
+      font-size: 24px;
+      line-height: 1.4em;
+      margin-bottom: 1em;
+    }
+
+    .list--children {
+      list-style-type: none;
+    }
+
+    li iron-icon {
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+    }
+
+  </style>
+  <template>
+    <paper-toolbar>
+      <p class="title">Une application communautaire</p>
+    </paper-toolbar>
+    <div class="content">
+      <p>Un plugin doit exposer&nbsp;:</p>
+      <div class="columns">
+        <paper-material elevation="2" class="column">
+          <h2>Une configuration</h2>
+          <ul>
+            <li>Affichage des options et des résultats.</li>
+            <li>
+              Deux types d’affichage&nbsp;:
+              <ul class="list--children">
+                <li><iron-icon icon="label-outline"></iron-icon>Liste d'erreurs</li>
+                <li><iron-icon icon="label-outline"></iron-icon>Rapport écrit en HTML</li>
+              </ul>
+            </li>
+          </ul>
+        </paper-material>
+        <paper-material elevation="2" class="column">
+          <h2>Une fonction d'analyse</h2>
+          <ul>
+            <li>Reçoit les fichiers à traiter</li>
+            <li>Renvoie les résultats d'analyse</li>
+            <li>Fichier par fichier</li>
+          </ul>
+        </paper-material>
+      </div>
+    </div>
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      is: 'dia-14',
+
+      ready: function () {
+        var that = this;
+
+        app.setLogoHeight(this.querySelector('.content'), 0.9);
+
+        window.addEventListener('resize', function() {
+          app.setLogoHeight(that.querySelector('.content'), 0.9);
+        });
+      }
+    });
+  })();
+  </script>
+</dom-module>
