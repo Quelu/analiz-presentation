@@ -11468,6 +11468,14 @@ font-style: italic;
 
   /* General styles */
 
+  .white {
+    color: white;
+  }
+
+  .indigo-200 {
+    color: var(--paper-indigo-200);
+  }
+
   neon-animatable {
     @apply(--layout-vertical);
   }
@@ -11488,7 +11496,7 @@ font-style: italic;
     @apply(--layout-center-center);
   }
 
-  neon-animatable:nth-child(32) {
+  neon-animatable:nth-child(34) {
     background-color: var(--paper-light-blue-500);
     padding: 10% 0;
   }
@@ -11502,11 +11510,12 @@ font-style: italic;
   neon-animatable:nth-child(5),
   neon-animatable:nth-child(22),
   neon-animatable:nth-child(24),
-  neon-animatable:nth-child(25),
   neon-animatable:nth-child(26),
+  neon-animatable:nth-child(27),
   neon-animatable:nth-child(28),
-  neon-animatable:nth-child(29),
-  neon-animatable:nth-child(31)
+  neon-animatable:nth-child(30),
+  neon-animatable:nth-child(31),
+  neon-animatable:nth-child(33)
   {
     background-color: white;
   }
@@ -11535,21 +11544,26 @@ font-style: italic;
     background-color: #f9c710;
   }
 
-  neon-animatable:nth-child(27) {
+  neon-animatable:nth-child(25) {
+    background-color: var(--paper-indigo-500);
+  }
+
+
+  neon-animatable:nth-child(29) {
     background-color: var(--paper-pink-500);
   }
 
-  neon-animatable:nth-child(27) iron-icon {
+  neon-animatable:nth-child(29) iron-icon {
     margin-right: 20px;
     height: 75px;
     width: 75px;
   }
 
-  neon-animatable:nth-child(27) paper-button {
+  neon-animatable:nth-child(29) paper-button {
     background-color: var(--paper-pink-600)
   }
 
-  neon-animatable:nth-child(30) {
+  neon-animatable:nth-child(32) {
     background-color: var(--paper-cyan-500)
   }
 
@@ -14877,7 +14891,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 0 10%;
     }
     iron-image {
-      height: 150px;
+      height: 20%;
       margin: 20px 0;
       width: 100%;
     }
@@ -14930,7 +14944,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 0 10%;
     }
     iron-image {
-      height: 150px;
+      height: 20%;
       margin: 20px 0;
       width: 100%;
     }
@@ -14984,7 +14998,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 0 10%;
     }
     iron-image {
-      height: 150px;
+      height: 20%;
       margin: 20px 0;
       width: 100%;
     }
@@ -15280,6 +15294,115 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   (function() {
     Polymer({
       is: 'dia-13'
+    });
+  })();
+  </script>
+</dom-module>
+<dom-module id="dia-14" assetpath="dia-14/">
+  <style>
+    :host {
+      display: block;
+    }
+
+    .content {
+      @apply(--layout-vertical);
+      padding: 30px 10%;
+    }
+    p {
+      @apply(--paper-font-display1);
+    }
+    .columns {
+      @apply(--layout-horizontal);
+    }
+    .column {
+      padding: 2em;
+      margin: 5% 2.5%;
+      width: 100%;
+      color: white;
+    }
+
+    .column:nth-child(1) {
+      background-color: var(--paper-cyan-500)
+    }
+
+    .column:nth-child(2) {
+      background-color: var(--paper-light-green-500)
+    }
+
+    .column h2 {
+      text-align: center;
+      @apply(--paper-font-display1);
+      padding-bottom: .5em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid white;
+    }
+
+    ul {
+      margin: 20px 0
+    }
+
+    ul li {
+      font-size: 24px;
+      line-height: 1.4em;
+      margin-bottom: 1em;
+    }
+
+    .list--children {
+      list-style-type: none;
+    }
+
+    li iron-icon {
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+    }
+
+  </style>
+  <template>
+    <paper-toolbar>
+      <p class="title">Une application communautaire</p>
+    </paper-toolbar>
+    <div class="content">
+      <p>Un plugin doit exposer&nbsp;:</p>
+      <div class="columns">
+        <paper-material elevation="2" class="column">
+          <h2>Une configuration</h2>
+          <ul>
+            <li>Affichage des options et des résultats.</li>
+            <li>
+              Deux types d’affichage&nbsp;:
+              <ul class="list--children">
+                <li><iron-icon icon="label-outline"></iron-icon>Liste d'erreurs</li>
+                <li><iron-icon icon="label-outline"></iron-icon>Rapport écrit en HTML</li>
+              </ul>
+            </li>
+          </ul>
+        </paper-material>
+        <paper-material elevation="2" class="column">
+          <h2>Une fonction d'analyse</h2>
+          <ul>
+            <li>Reçoit les fichiers à traiter</li>
+            <li>Renvoie les résultats d'analyse</li>
+            <li>Fichier par fichier</li>
+          </ul>
+        </paper-material>
+      </div>
+    </div>
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      is: 'dia-14',
+
+      ready: function () {
+        var that = this;
+
+        app.setLogoHeight(this.querySelector('.content'), 0.9);
+
+        window.addEventListener('resize', function() {
+          app.setLogoHeight(that.querySelector('.content'), 0.9);
+        });
+      }
     });
   })();
   </script>
