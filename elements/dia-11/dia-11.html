@@ -1,0 +1,104 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="dia-11">
+  <style>
+    :host {
+      display: block;
+    }
+
+    .content {
+      @apply(--layout-vertical);
+      @apply(--layout-center-justified);
+      padding: 0 10%;
+    }
+    p {
+      @apply(--paper-font-display1);
+    }
+
+    p iron-icon {
+      height: 40px;
+      width: 40px;
+      margin-right: 30px;
+      margin-left: 40px;
+    }
+
+    .fragment {
+      opacity: 0;
+    }
+
+    .fragments p {
+      animation: show 1s forwards;
+    }
+
+    .fragments p:nth-child(1) {
+    	animation-delay: 2s;
+    }
+    .fragments p:nth-child(2) {
+    	animation-delay: 3s;
+    }
+    .fragments p:nth-child(3) {
+    	animation-delay: 4s;
+    }
+    .fragments p:nth-child(4) {
+    	animation-delay: 5s;
+    }
+    .fragments p:nth-child(5) {
+    	animation-delay: 6s;
+    }
+
+    @keyframes show {
+      100% { opacity: 1; }
+    }
+
+    iron-image {
+      height: 150px;
+      margin-bottom: 100px;
+      width: 100%;
+    }
+
+  </style>
+  <template>
+    <paper-toolbar>
+      <p class="title">Un concentré de nouvelles technologies</p>
+    </paper-toolbar>
+    <div class="content">
+      <iron-image src="/images/electron-logo.svg" preload sizing="contain"></iron-image>
+      <div class="fragments">
+        <p class="fragment"><iron-icon icon="label-outline"></iron-icon>Développer des applications natives en HTML et JavaScript</p>
+        <p class="fragment"><iron-icon icon="label-outline"></iron-icon>Un environnement Chromium</p>
+        <p class="fragment"><iron-icon icon="label-outline"></iron-icon>Pas d'inter-compatibilité entre navigateurs</p>
+      </div>
+    </div>
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      is: 'dia-11',
+
+      activateDia: function ( ) {
+        this.$.fragments.classList.add('fragments');
+      },
+
+      ready: function () {
+        var that = this;
+
+        app.setLogoHeight(this.querySelector('.content'), 0.9);
+
+        window.addEventListener('resize', function() {
+          app.setLogoHeight(that.querySelector('.content'), 0.9);
+        });
+      }
+    });
+  })();
+  </script>
+</dom-module>
