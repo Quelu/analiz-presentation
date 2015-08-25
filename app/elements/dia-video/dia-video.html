@@ -17,6 +17,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     .content {
       @apply(--layout-vertical);
+      overflow: hidden;
+    }
+
+    .cover {
+      object-fit: cover;
     }
 
     video {
@@ -28,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p class="title"><content select=".title"></content></p>
     </paper-toolbar>
     <div class="content">
-      <video src="[[path]]" id="video"></video>
+      <video src="[[path]]" id="video" muted class$="[[_computeClass(cover)]]"></video>
     </div>
   </template>
   <script>
@@ -37,7 +42,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'dia-video',
 
       properties: {
-        path: String
+        path: String,
+        cover: {
+          type: Boolean,
+          value: false
+        },
+        noAutoNext: {
+          type: Boolean,
+          value: false
+        }
       },
 
       activateDia: function ( ) {
@@ -59,15 +72,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ready: function () {
         var that = this;
 
-        this.$.video.onended = function () {
-          that.fire('next-dia');
-        };
+        if (!this.noAutoNext) {
+          this.$.video.onended = function () {
+            that.fire('next-dia');
+          };
+        }
 
         app.setLogoHeight(this.querySelector('.content'), 0.95);
 
         window.addEventListener('resize', function() {
           app.setLogoHeight(that.querySelector('.content'), 0.95);
         });
+      },
+
+      _computeClass: function ( isCover ) {
+        return (isCover) ? 'cover' : '';
       }
     });
   })();
